@@ -25,10 +25,19 @@ The output for each rover should be its final co-ordinates and heading.
 ### Example ### 
 
 Test Input:
+```
+5 5
+1 2 N 
+L M L M L M L M M
+3 3 E
+M M R M M R M R R M
+```
 
-55 12N LMLMLMLMM 33E MMRMMRMRRM
-
-Expected Output: 13N 51E
+Expected Output: 
+```
+1 3 N
+5 1 E
+```
 
 ### Final considerations ###
 
