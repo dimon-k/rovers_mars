@@ -53,8 +53,17 @@ class NasaProgram
   end
 
   def move_forward
+    validate_plateau_borders
     @move_around += @current_weight
+  end
 
-    raise 'Out of plateau!!!' unless (0..@working_scale).include?(@move_around)
+  def validate_plateau_borders
+    x, y = @move_around % @width, @move_around / @width
+    out_message = -> (direction) { raise "Rover out of plateau to the #{direction}!" }
+
+    out_message.call('north') if @current_weight.eql?(@width)  && y.eql?(@y_max)
+    out_message.call('east')  if @current_weight.eql?(1)       && x.eql?(@x_max)
+    out_message.call('south') if @current_weight.eql?(-@width) && y.zero?
+    out_message.call('west')  if @current_weight.eql?(-1)      && x.zero?
   end
 end
