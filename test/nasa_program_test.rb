@@ -87,4 +87,36 @@ class NasaProgramTest < Test::Unit::TestCase
     exception = assert_raise(RuntimeError) { @nasa_program.explore(:R, :M, :L, :K) }
     assert_equal('Improper move!', exception.message)
   end
+
+  def test_out_of_plateau_validation_north
+    @nasa_program = NasaProgram.new(2, 2)
+    @nasa_program.set_initial_position(1, 1, :N)
+
+    exception = assert_raise(RuntimeError) { @nasa_program.explore(:M, :M) }
+    assert_equal('Rover out of plateau to the north!', exception.message)
+  end
+
+  def test_out_of_plateau_validation_east
+    @nasa_program = NasaProgram.new(2, 2)
+    @nasa_program.set_initial_position(1, 1, :N)
+
+    exception = assert_raise(RuntimeError) { @nasa_program.explore(:R, :M, :M) }
+    assert_equal('Rover out of plateau to the east!', exception.message)
+  end
+
+  def test_out_of_plateau_validation_south
+    @nasa_program = NasaProgram.new(2, 2)
+    @nasa_program.set_initial_position(1, 1, :N)
+
+    exception = assert_raise(RuntimeError) { @nasa_program.explore(:R, :R, :M, :M) }
+    assert_equal('Rover out of plateau to the south!', exception.message)
+  end
+
+  def test_out_of_plateau_validation_west
+    @nasa_program = NasaProgram.new(2, 2)
+    @nasa_program.set_initial_position(1, 1, :N)
+
+    exception = assert_raise(RuntimeError) { @nasa_program.explore(:L, :M, :M) }
+    assert_equal('Rover out of plateau to the west!', exception.message)
+  end
 end
