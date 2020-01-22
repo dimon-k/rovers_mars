@@ -1,7 +1,3 @@
-Hello!
-
-Please provide a solution in code for the problem below. If you have any question please create an Issue in the repository.
-
 ## Coding Problem ##
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
@@ -38,11 +34,3 @@ Expected Output:
 1 3 N
 5 1 E
 ```
-
-### Final considerations ###
-
-How fast you implement the solution is an important factor but by far not the most relevant. We would prefer that you take your time and deliver a solution that you're proud of ;-). In terms of how you approach the problem and what exactly you deliver - that's *entirely* up to you.
-
-If you have any questions, don’t hesitate to ask (via issues in this repository). We'll be looking forward to your solution.
-
-Enjoy hacking! Best regards,
